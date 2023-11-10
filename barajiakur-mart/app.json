@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "barajiakur-mart",
+    "slug": "barajiakur-mart",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "barajiakur-mart"
+}
