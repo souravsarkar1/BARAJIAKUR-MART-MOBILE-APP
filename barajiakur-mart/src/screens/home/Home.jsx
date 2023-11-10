@@ -13,14 +13,9 @@ const Home = ({ navigation }) => {
         <SafeAreaView style={styles.safeArea}>
             <ScrollView contentContainerStyle={styles.scrollViewContent}>
                 <View style={styles.container}>
-                    <Text style={{ fontSize: 20 }}>WellCome To Barajiakur-Mart</Text>
-                    {/* <ImageScreen/>*/}
-                    {/*<CustomImageSlider images={images}/>*/}
+                    <Text style={{ fontSize: 20 , margin : 10}}>WellCome To Barajiakur-Mart</Text>
                     <ImageScreen />
                     <Home4 />
-                    <Button color={"red"} title='Back to Aboutpage' onPress={() => handleRoute("About")} />
-                    <Button title='Back to Loginpage' onPress={() => handleRoute("Login")} />
-                    <Button title='Back to Signuppage' onPress={() => handleRoute("Signup")} />
                 </View>
             </ScrollView>
         </SafeAreaView>
