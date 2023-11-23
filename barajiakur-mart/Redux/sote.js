@@ -6,6 +6,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import { reducer as dataReducer } from "./Data/reducer";
+import { reducer as authReducer } from "./Authencation/reducer";
 // Define the persist config
 const persistConfig = {
   key: 'root', // key is required
@@ -16,8 +17,8 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
 //   AuthReducer,RecipeReducer
-dataReducer
-
+dataReducer,
+authReducer
 });
 
 // Create a persisted reducer

@@ -6,6 +6,7 @@ import ProductCard from './ProductCard';
 
 const Products = () => {
   const data = useSelector((state) => state.dataReducer.data);
+  const loading = useSelector((state) => state.dataReducer.data);
   const dispatch = useDispatch();
   console.log(data);
   useEffect(() => {

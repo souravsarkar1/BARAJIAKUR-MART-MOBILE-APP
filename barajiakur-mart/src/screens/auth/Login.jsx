@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { View, TextInput, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../../../Redux/Authencation/action';
 
 const Login = ({ navigation }) => {
     const [formData, setFormData] = useState({
         email: '',
         pass: '',
     });
+    const dispath = useDispatch();
+    const isAuth = useSelector(st=>st.authReducer);
+    console.log(isAuth);
 
     const handleInputChange = (name, value) => {
         setFormData({
@@ -15,8 +20,8 @@ const Login = ({ navigation }) => {
     };
 
     const handleSubmit = () => {
-        // Implement your login logic here using formData.email and formData.pass
-        // For example, you can send a POST request to your backend API endpoint for authentication
+        // console.log(formData);
+        dispath(login(formData));
     };
     const handleRoute = (page) => {
         navigation.navigate(page);

@@ -11,7 +11,7 @@ const CustomHeader = () => {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    backgroundColor: '#1e52a6', // You can customize the background color
+    backgroundColor: '#1e52a6',
     height: 50,
     justifyContent: 'center',
     alignItems: 'center',

@@ -26,41 +26,41 @@ const styles = StyleSheet.create({
   },
   cardActions: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
+    border: "1 solid red",
     marginTop: 10,
   },
   button1: {
-    backgroundColor: '#3498db', 
+    backgroundColor: '#3498db',
     marginRight: 8,
   },
   button2: {
-    backgroundColor: 'orange', 
+    backgroundColor: 'orange',
     marginRight: 8,
   },
   button3: {
-    backgroundColor: 'green', 
+    backgroundColor: 'green',
     marginRight: 8,
   },
 });
 
-const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
 
 const ProducctCard = ({ img1, desc, title, price, stock, rating }) => (
   <Card style={styles.card}>
+    <Card.Cover style={styles.cardCover} source={{ uri: img1 }} />
     <Card.Title
       titleStyle={styles.cardTitle}
       subtitleStyle={styles.cardSubtitle}
       title={title}
       subtitle={`Price: $${price}`}
-      left={LeftContent}
+      
     />
     <Card.Content style={styles.cardContent}>
       <Text>{desc}</Text>
     </Card.Content>
-    <Card.Cover style={styles.cardCover} source={{ uri: img1 }} />
     <Card.Actions style={styles.cardActions}>
-      <Button  style={styles.button1}>{rating}</Button>
-      <Button style={styles.button2}>{stock ? 'In Stock' : 'Out of Stock'}</Button>
+      <Button style={styles.button1}>{rating}</Button>
+      <Button style={styles.button2}>{stock ? 'Stock' : 'Stock'}</Button>
       <Button style={styles.button3}>Buy Now</Button>
     </Card.Actions>
   </Card>

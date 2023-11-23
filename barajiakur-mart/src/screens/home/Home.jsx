@@ -13,7 +13,12 @@ const Home = ({ navigation }) => {
         <SafeAreaView style={styles.safeArea}>
             <ScrollView contentContainerStyle={styles.scrollViewContent}>
                 <View style={styles.container}>
-                    <Text style={{ fontSize: 20 , margin : 10}}>WellCome To Barajiakur-Mart</Text>
+                    <Text style={{
+                        fontSize: 24,
+                        fontWeight: 'bold',
+                        marginBottom: 20,
+                    }}
+                    >WellCome To Barajiakur-Mart</Text>
                     <ImageScreen />
                     <Home4 />
                 </View>

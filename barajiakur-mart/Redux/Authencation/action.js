@@ -1,30 +1,16 @@
 import axios from "axios";
 import { BACKFROMLOGINFAIL, BACKFROMSIGNUPFAIL, LOGINEQUEST, LOGINFAIL, LOGINSUCESS, LOGOUTSUCESSFUL, SIGNUPFAIL, SIGNUPREQUEST, SIGNUPSUCESS } from "./actionTypes"
 
-export const signup = (formData, toast) => (dispatch) => {
+export const signup = (formData) => (dispatch) => {
   dispatch({ type: SIGNUPREQUEST });
   return axios.post(`https://barajiakurmartbe.onrender.com/user/register`, formData).then((res) => {
     console.log(res.data);
     dispatch({ type: SIGNUPSUCESS });
-    toast({
-      title: res.data.msg === "New user has been added" ? "Account created." : 'Email is already registered',
-      description: res.data.msg + " please login with that account",
-      status: 'success',
-      duration: 5000,
-      isClosable: true,
-      position: "top"
-    })
+    
   }).catch((err) => {
     console.log(err.message);
     dispatch({ type: SIGNUPFAIL })
-    toast({
-      title: 'Request Fail',
-      description: "Something Went To Wrong!!",
-      status: 'error',
-      duration: 9000,
-      isClosable: true,
-      position: "top"
-    })
+    
     return;
   })
 }
@@ -34,7 +20,7 @@ export const signupErrorHandeling = () => (dispatch) => {
 }
 
 
-export const login = (data, toast) => (dispatch) => {
+export const login = (data) => (dispatch) => {
   dispatch({ type: LOGINEQUEST });
   return axios.post(`https://barajiakurmartbe.onrender.com/user/login`, data).then((res) => {
     dispatch({ type: LOGINSUCESS, payload: res.data.token })
